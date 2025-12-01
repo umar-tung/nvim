@@ -16,6 +16,12 @@ return {
 	},
 	config = function()
 	    require("lspconfig").lua_ls.setup {}
+	    require("lspconfig").clangd.setup {
+                cmd = {
+                    "clangd",
+                    "--compile-commands-dir=build-local",  -- point to your CMake build-local folder
+                },
+            }
 	end
     }
 }
