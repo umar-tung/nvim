@@ -14,7 +14,10 @@ return {
 	     vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope find references' })
 	     vim.keymap.set('n', '<leader>en', function()
 		 require('telescope.builtin').find_files {
-		     cwd = vim.fn.stdpath("config")
+		     cwd = vim.fn.stdpath("config"),
+		     "%build/",        -- ignore anything under build/
+		     "%node_modules/", -- ignore node_modules
+		     "%.git/"         -- ignore git directory
 		 }
 	     end)
 	 end
