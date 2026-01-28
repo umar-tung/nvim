@@ -15,8 +15,8 @@ return {
 	    },
 	},
 	config = function()
-	    require("lspconfig").lua_ls.setup {}
-	    require("lspconfig").clangd.setup {
+	    vim.lsp.config.lua_ls = {}
+	    vim.lsp.config.clangd = {
                 cmd = {
                     "clangd",
                     "--compile-commands-dir=build-local",  -- point to your CMake build-local folder

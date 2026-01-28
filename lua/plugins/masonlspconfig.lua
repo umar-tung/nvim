@@ -9,7 +9,7 @@ return {
 		handlers = {
 		    function(server_name)
 
-			require("lspconfig")[server_name].setup({ capabilities = capabilities })
+			vim.lsp.config[server_name].setup({ capabilities = capabilities })
 
 		    end,
 		}
